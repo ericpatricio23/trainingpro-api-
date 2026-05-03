@@ -106,15 +106,15 @@ O treino é retornado via API e pode ser consumido por qualquer frontend (web ou
 
 src/main/java/com/eric/apitraining/
 
-├── client/        # Integração com OpenAI
-├── config/        # Configurações (Swagger, etc)
-├── controller/    # Endpoints REST
-├── dto/           # Objetos de transferência de dados
-├── entity/        # Entidades JPA
-├── exception/     # Tratamento global de erros
-├── repository/    # Interfaces JPA
-├── security/      # JWT e configuração de segurança
-└── service/       # Regras de negócio
+ client/        # Integração com OpenAI
+ config/        # Configurações (Swagger, etc)
+ controller/    # Endpoints REST
+ dto/           # Objetos de transferência de dados
+ entity/        # Entidades JPA
+ exception/     # Tratamento global de erros
+ repository/    # Interfaces JPA
+ security/      # JWT e configuração de segurança
+ service/       # Regras de negócio
 
 ---
 
