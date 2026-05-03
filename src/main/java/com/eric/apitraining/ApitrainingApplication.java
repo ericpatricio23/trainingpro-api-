@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ApisecurityApplication {
+public class ApitrainingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApisecurityApplication.class, args);
+		SpringApplication.run(ApitrainingApplication.class, args);
 	}
 
 }

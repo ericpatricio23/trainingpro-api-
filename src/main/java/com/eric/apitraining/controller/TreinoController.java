@@ -5,7 +5,9 @@ import com.eric.apitraining.dto.treino.TreinoResponseDTO;
 import com.eric.apitraining.service.TreinoService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,8 +32,10 @@ public class TreinoController {
             @RequestParam(required = false) String esporte,
             @RequestParam(required = false) String objetivo,
             @RequestParam(required = false) String nivel,
-            Pageable pageable
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
     ) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by("dataCriacao").descending());
         return service.listar(esporte, objetivo, nivel, pageable);
     }
 

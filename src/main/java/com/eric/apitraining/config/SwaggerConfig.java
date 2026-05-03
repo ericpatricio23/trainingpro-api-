@@ -1,7 +1,10 @@
 package com.eric.apitraining.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.security.SecurityRequirement;
+import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,8 +16,16 @@ public class SwaggerConfig {
         return new OpenAPI()
                 .info(new Info()
                         .title("TrainingPro AI")
-                        .description("API REST para geração de treinos personalizados com Inteligência Artificial para qualquer modalidade esportiva.")
+                        .description("API REST para geração de treinos personalizados com Inteligência Artificial.")
                         .version("1.0.0")
+                )
+                .addSecurityItem(new SecurityRequirement().addList("Bearer Authentication"))
+                .components(new Components()
+                        .addSecuritySchemes("Bearer Authentication", new SecurityScheme()
+                                .type(SecurityScheme.Type.HTTP)
+                                .scheme("bearer")
+                                .bearerFormat("JWT")
+                        )
                 );
     }
 }
