@@ -18,11 +18,7 @@ Desenvolvido com **Spring Boot**, o projeto integra a API da OpenAI para criar t
   Sistema completo de registro e login com autenticação stateless.
 
 * **Filtros e Paginação**
-  Listagem de treinos com filtros por:
-
-    * Esporte
-    * Objetivo
-    * Nível
+  Listagem de treinos com filtros por esporte, objetivo e nível.
 
 * **Documentação Interativa (Swagger)**
   Interface para testar os endpoints de forma prática.
@@ -62,12 +58,7 @@ Desenvolvido com **Spring Boot**, o projeto integra a API da OpenAI para criar t
 
 ### 1. Entrada de Dados 📊
 
-O usuário fornece informações como:
-
-* Esporte (ex: basquete, corrida, musculação)
-* Objetivo (ex: hipertrofia, emagrecimento, resistência)
-* Nível (iniciante, intermediário, avançado)
-* Duração do treino
+O usuário fornece informações como esporte (ex: basquete, corrida, musculação), objetivo (ex: hipertrofia, emagrecimento, resistência), nível (iniciante, intermediário, avançado) e duração do treino.
 
 ---
 
@@ -85,36 +76,27 @@ O treino é retornado via API e pode ser consumido por qualquer frontend (web ou
 
 ## 🌟 Diferenciais
 
-* **Personalização Total com IA**
-  Cada treino é único e adaptado ao usuário.
-
-* **Escalabilidade**
-  Estrutura pronta para crescer como micro-SaaS.
-
-* **Arquitetura Limpa**
-  Organização em camadas bem definida.
-
-* **Segurança Robusta**
-  Autenticação via JWT stateless.
-
-* **Flexibilidade**
-  Suporte a qualquer modalidade esportiva.
+* **Personalização Total com IA** — Cada treino é único e adaptado ao usuário.
+* **Escalabilidade** — Estrutura pronta para crescer como micro-SaaS.
+* **Arquitetura Limpa** — Organização em camadas bem definida.
+* **Segurança Robusta** — Autenticação via JWT stateless.
+* **Flexibilidade** — Suporte a qualquer modalidade esportiva.
 
 ---
 
 ## 📦 Estrutura do Projeto
 
-src/main/java/com/eric/apitraining/
-
- client/        # Integração com OpenAI
- config/        # Configurações (Swagger, etc)
- controller/    # Endpoints REST
- dto/           # Objetos de transferência de dados
- entity/        # Entidades JPA
- exception/     # Tratamento global de erros
- repository/    # Interfaces JPA
- security/      # JWT e configuração de segurança
- service/       # Regras de negócio
+    src/main/java/com/eric/apitraining/
+    │
+    ├── client/        # Integração com OpenAI
+    ├── config/        # Configurações (Swagger, etc)
+    ├── controller/    # Endpoints REST
+    ├── dto/           # Objetos de transferência de dados
+    ├── entity/        # Entidades JPA
+    ├── exception/     # Tratamento global de erros
+    ├── repository/    # Interfaces JPA
+    ├── security/      # JWT e configuração de segurança
+    └── service/       # Regras de negócio
 
 ---
 
@@ -140,11 +122,7 @@ cd trainingpro-api-
 
 ### 2. Configure as variáveis de ambiente
 
-Crie o arquivo:
-
-```
-src/main/resources/application-local.properties
-```
+Crie o arquivo `src/main/resources/application-local.properties`:
 
 ```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/seu_banco
@@ -181,16 +159,10 @@ http://localhost:8080/swagger-ui.html
 
 A API utiliza **JWT** para proteger rotas.
 
-### Passo a passo:
-
 1. `POST /auth/register` → Criar usuário
 2. `POST /auth/login` → Obter token
 3. No Swagger → Clique em **Authorize**
-4. Informe:
-
-```
-Bearer seu_token_aqui
-```
+4. Informe: `Bearer seu_token_aqui`
 
 ---
 
@@ -198,15 +170,7 @@ Bearer seu_token_aqui
 
 Este projeto utiliza a API da OpenAI para geração de treinos personalizados.
 
-> ⚠️ **Atenção:** A API da OpenAI é um serviço pago.
-
-* Para utilizar a funcionalidade de geração de treinos, é necessário:
-
-    * Criar uma conta na OpenAI
-    * Gerar uma chave de API
-    * Adicionar créditos à conta
-
-Sem créditos disponíveis, a geração de treinos com IA **não funcionará**.
+> ⚠️ **Atenção:** A API da OpenAI é um serviço pago. Para utilizar a funcionalidade de geração de treinos, é necessário criar uma conta na OpenAI, gerar uma chave de API e adicionar créditos à conta. Sem créditos disponíveis, a geração de treinos com IA **não funcionará**.
 
 ---
 
@@ -220,7 +184,7 @@ Caso você não possua créditos na OpenAI, você pode:
 
 ---
 
-## Sempre Verifique:
+## Sempre Verifique
 
 Se a API não estiver funcionando, verifique:
 
@@ -228,5 +192,4 @@ Se a API não estiver funcionando, verifique:
 * Sem créditos na conta
 * Limite de uso atingido
 * Problemas de conexão
-
 
