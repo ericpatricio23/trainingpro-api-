@@ -46,7 +46,7 @@ public class TreinoController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletar(@PathVariable Long id) {
-        service.deletar(id);
+    public void deletarPorID(@PathVariable Long id) {
+        service.deletarPorID(id);
     }
 }

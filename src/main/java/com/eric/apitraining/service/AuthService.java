@@ -4,6 +4,7 @@ import com.eric.apitraining.dto.auth.AuthResponseDTO;
 import com.eric.apitraining.dto.auth.LoginRequestDTO;
 import com.eric.apitraining.dto.auth.RegisterRequestDTO;
 import com.eric.apitraining.entity.Usuario;
+import com.eric.apitraining.exception.EmailJaCadastradoException;
 import com.eric.apitraining.repository.UsuarioRepository;
 import com.eric.apitraining.security.JwtService;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -35,7 +36,7 @@ public class AuthService {
     public AuthResponseDTO register(RegisterRequestDTO dto) {
 
         if (repository.findByEmail(dto.email()).isPresent()) {
-            throw new RuntimeException("Email já cadastrado");
+            throw new EmailJaCadastradoException("Email já cadastrado: " + dto.email());
         }
 
         Usuario usuario = new Usuario();

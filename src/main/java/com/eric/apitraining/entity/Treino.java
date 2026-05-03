@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -31,5 +32,6 @@ public class Treino {
     @Column(columnDefinition = "TEXT")
     private String treinoGerado;
 
+    @CreationTimestamp
     private LocalDateTime dataCriacao;
 }

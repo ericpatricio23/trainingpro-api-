@@ -1,6 +1,7 @@
 package com.eric.apitraining.exception;
 
 import com.eric.apitraining.dto.ErrorResponse;
+import com.eric.apitraining.exception.treino.InvalidTreinoException;
 import com.eric.apitraining.exception.treino.TreinoNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +25,26 @@ public class GlobalExceptionHandler {
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
                 .body(erro);
+    }
+    @ExceptionHandler(EmailJaCadastradoException.class)
+    public ResponseEntity<ErrorResponse> handleEmailJaCadastrado(EmailJaCadastradoException ex) {
+        ErrorResponse erro = new ErrorResponse(
+                HttpStatus.CONFLICT.value(),
+                ex.getMessage(),
+                LocalDateTime.now()
+        );
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(erro);
+    }
+
+
+    @ExceptionHandler(InvalidTreinoException.class)
+    public ResponseEntity<ErrorResponse> handleInvalidTreino(InvalidTreinoException ex) {
+        ErrorResponse erro = new ErrorResponse(
+                HttpStatus.UNPROCESSABLE_ENTITY.value(),
+                ex.getMessage(),
+                LocalDateTime.now()
+        );
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(erro);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

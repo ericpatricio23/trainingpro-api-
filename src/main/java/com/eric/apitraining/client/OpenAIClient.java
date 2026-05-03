@@ -1,5 +1,6 @@
 package com.eric.apitraining.client;
 
+import com.eric.apitraining.exception.OpenAIException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
@@ -56,7 +57,7 @@ public class OpenAIClient {
             return message.get("content").toString();
 
         } catch (Exception e) {
-            throw new RuntimeException("Erro ao chamar OpenAI: " + e.getMessage(), e);
+            throw new OpenAIException("Erro ao comunicar com a OpenAI: " + e.getMessage());
         }
     }
 }
