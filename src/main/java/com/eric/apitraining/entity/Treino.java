@@ -1,5 +1,4 @@
-package com.eric.apibasketball.entity;
-
+package com.eric.apitraining.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,35 +7,29 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Treinos")
+@Table(name = "treinos")
 public class Treino {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime data;
-
-    private Integer duracao;
+    private String esporte;
 
     private String objetivo;
 
     private String nivel;
 
-    @ManyToMany
-    @JoinTable (
-            name = "treino_exercicio",
-            joinColumns = @JoinColumn (name = "treino_id"),
-            inverseJoinColumns = @JoinColumn(name = "exercicio_id")
-    )
+    private Integer duracao;
 
-    private List<Exercicio> exercicios;
+    @Column(columnDefinition = "TEXT")
+    private String treinoGerado;
 
+    private LocalDateTime dataCriacao;
 }

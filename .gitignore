@@ -33,6 +33,6 @@ build/
 .vscode/
 
 # Configurações sensíveis
-application.properties
+application-local.properties
 application.yml
 .env

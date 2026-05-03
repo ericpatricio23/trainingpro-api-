@@ -1,4 +1,4 @@
-package com.eric.apibasketball.dto;
+package com.eric.apitraining.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.eric.apibasketball;
+package com.eric.apitraining;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
