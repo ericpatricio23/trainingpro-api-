@@ -104,7 +104,7 @@ O treino é retornado via API e pode ser consumido por qualquer frontend (web ou
 
 ### Pré-requisitos
 
-* Java 17+
+* Java 21+
 * Maven
 * PostgreSQL
 * Chave da OpenAI
