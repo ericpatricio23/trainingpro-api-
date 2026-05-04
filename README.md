@@ -32,8 +32,8 @@ Desenvolvido com **Spring Boot**, o projeto integra a API da OpenAI para criar t
 
 ### Backend
 
-* Java 17
-* Spring Boot 3
+* Java 21
+* Spring Boot 4.0.5
 * Spring Security + JWT
 * Spring Data JPA
 
